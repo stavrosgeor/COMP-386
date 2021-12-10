@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerLife : MonoBehaviour
 {
+    private Rigidbody2D rb;
     private Animator anim;
 
-    
+
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
@@ -22,6 +25,12 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Die()
     {
-        anim.SetTrigger("death"); //death animator 
+        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("death"); //death animator  
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
