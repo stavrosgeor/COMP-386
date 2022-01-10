@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded()) 
         {
-            jumpSoundEffect.Play(); //sound when jumping
+            jumpSoundEffect.Play(); //sound when jumping  
            rb.velocity = new Vector2(rb.velocity.x, jumpForce); 
         }
 
