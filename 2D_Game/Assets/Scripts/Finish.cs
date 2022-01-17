@@ -14,7 +14,7 @@ public class Finish : MonoBehaviour
         finishSound = GetComponent<AudioSource>();
     }
 
-    private void OnlyTriggerEnter2D(Collider2D collison)
+    private void OnTriggerEnter2D(Collider2D collison)
     {
         if (collison.gameObject.name == "Player" && !levelCompleted)
         {
